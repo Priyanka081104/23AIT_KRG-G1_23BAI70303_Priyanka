@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FWI Prediction</title>
+    <!-- Add Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+    <h1 class="mb-4">FWI Prediction</h1>
+
+    <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <label for="Temperature">Temperature:</label>
+        <input type="text" name="Temperature" placeholder="Temperature" required="required" class="form-control" /><br>
+
+        <label for="RH">Relative Humidity (RH):</label>
+        <input type="text" name="RH" placeholder="RH" required="required" class="form-control" /><br>
+
+        <label for="Ws">Wind Speed (Ws):</label>
+        <input type="text" name="Ws" placeholder="Ws" required="required" class="form-control" /><br>
+
+        <label for="Rain">Rain:</label>
+        <input type="text" name="Rain" placeholder="Rain" required="required" class="form-control" /><br>
+
+        <label for="FFMC">FFMC:</label>
+        <input type="text" name="FFMC" placeholder="FFMC" required="required" class="form-control" /><br>
+
+        <label for="DMC">DMC:</label>
+        <input type="text" name="DMC" placeholder="DMC" required="required" class="form-control" /><br>
+
+        <label for="ISI">ISI:</label>
+        <input type="text" name="ISI" placeholder="ISI" required="required" class="form-control" /><br>
+        
+        <label for="Classes">Classes:</label>
+        <input type="text" name="Classes" placeholder="Classes" required="required" class="form-control" /><br>
+
+
+        <label for="Region">Region:</label>
+        <input type="text" name="Region" placeholder="Region" required="required" class="form-control" /><br><br>
+
+        <button type="submit" class="btn btn-primary btn-lg">Predict</button>
+    </form>
+
+    <br>
+    <h2>FWI Prediction Result: {{ result }}</h2>
+</body>
+</html>
